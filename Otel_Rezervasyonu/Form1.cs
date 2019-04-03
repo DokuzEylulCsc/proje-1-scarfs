@@ -24,8 +24,101 @@ namespace Otel_Rezervasyonu
 
 
         }
+        private void denizTek_CheckedChanged(object sender, EventArgs e)
+        {
+            if (denizTek.Checked == true)
+            {
+                radiobutton = "denizTek";
+                listBox1.Visible = true;
+                listBox2.Visible = false;
+                listBox3.Visible = false;
+                listBox4.Visible = false;
+                listBox5.Visible = false;
+                listBox6.Visible = false;
 
-       
+                labelDoluluk.Text = rezervasyon.odaDoluluk(radiobutton).ToString();
+            }
+
+        }
+
+        private void denizCift_CheckedChanged(object sender, EventArgs e)
+        {
+            if (denizCift.Checked == true)
+            {
+                radiobutton = "denizCift";
+
+                listBox1.Visible = false;
+                listBox2.Visible = true;
+                listBox3.Visible = false;
+                listBox4.Visible = false;
+                listBox5.Visible = false;
+                listBox6.Visible = false;
+            }
+        }
+
+        private void denizIkiz_CheckedChanged(object sender, EventArgs e)
+        {
+            if (denizIkiz.Checked == true)
+            {
+                radiobutton = "denizIkiz";
+                listBox1.Visible = false;
+                listBox2.Visible = false;
+                listBox3.Visible = true;
+                listBox4.Visible = false;
+                listBox5.Visible = false;
+                listBox6.Visible = false;
+            }
+        }
+
+
+
+        private void havuzTek_CheckedChanged(object sender, EventArgs e)
+        {
+            if (havuzTek.Checked == true)
+            {
+                radiobutton = "havuzTek";
+                listBox1.Visible = false;
+                listBox2.Visible = false;
+                listBox3.Visible = false;
+                listBox4.Visible = true;
+                listBox5.Visible = false;
+                listBox6.Visible = false;
+            }
+        }
+
+        private void havuzCift_CheckedChanged(object sender, EventArgs e)
+        {
+            if (havuzCift.Checked == true)
+            {
+                radiobutton = "havuzCift";
+                listBox1.Visible = false;
+                listBox2.Visible = false;
+                listBox3.Visible = false;
+                listBox4.Visible = false;
+                listBox5.Visible = true;
+                listBox6.Visible = false;
+            }
+        }
+        private void havuzIkiz_CheckedChanged(object sender, EventArgs e)
+        {
+            if (havuzIkiz.Checked == true)
+            {
+                radiobutton = "havuzIkiz";
+                listBox1.Visible = false;
+                listBox2.Visible = false;
+                listBox3.Visible = false;
+                listBox4.Visible = false;
+                listBox5.Visible = false;
+                listBox6.Visible = true;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+
+        }
+
 
         private void rezervasyonYap_Click(object sender, EventArgs e)
         {
