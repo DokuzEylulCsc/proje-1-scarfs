@@ -168,34 +168,60 @@ namespace Otel_Rezervasyonu
 
         }
 
-        
+
+
+
+
+        private void rezervasyonIptal_Click(object sender, EventArgs e)
+        {
+            //Console.WriteLine(listBox1.SelectedIndex);
+
+            if (listBox1.Visible == true)
+                rezervasyon.rezervasyonIptalIlet(listBox1.SelectedIndex, radiobutton);
+            else if (listBox2.Visible == true)
+                rezervasyon.rezervasyonIptalIlet(listBox2.SelectedIndex, radiobutton);
+            else if (listBox3.Visible == true)
+                rezervasyon.rezervasyonIptalIlet(listBox3.SelectedIndex, radiobutton);
+            else if (listBox4.Visible == true)
+                rezervasyon.rezervasyonIptalIlet(listBox4.SelectedIndex, radiobutton);
+            else if (listBox5.Visible == true)
+                rezervasyon.rezervasyonIptalIlet(listBox5.SelectedIndex, radiobutton);
+            else if (listBox6.Visible == true)
+                rezervasyon.rezervasyonIptalIlet(listBox6.SelectedIndex, radiobutton);
+
+
+            listBoxSil();
+            MessageBox.Show("Silindi");
+
+        }
 
 
 
 
 
 
+        public void listBoxSil()
+        {
+            //Console.WriteLine("sil çalıştı");
 
 
 
+            if (listBox1.Visible == true)
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            else if (listBox2.Visible == true)
+                listBox2.Items.RemoveAt(listBox2.SelectedIndex);
+            else if (listBox3.Visible == true)
+                listBox3.Items.RemoveAt(listBox3.SelectedIndex);
+            else if (listBox4.Visible == true)
+                listBox4.Items.RemoveAt(listBox4.SelectedIndex);
+            else if (listBox5.Visible == true)
+                listBox5.Items.RemoveAt(listBox5.SelectedIndex);
+            else if (listBox6.Visible == true)
+                listBox6.Items.RemoveAt(listBox6.SelectedIndex);
+            else MessageBox.Show("Oda türü seçiniz..!");
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
 
 
 
@@ -204,6 +230,8 @@ namespace Otel_Rezervasyonu
         {
 
         }
+
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
