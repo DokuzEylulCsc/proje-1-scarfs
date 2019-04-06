@@ -43,7 +43,12 @@ namespace Otel_Rezervasyonu
 
         public bool tarihKontrol(DateTime baslangic, DateTime bitis)
         {
-            
+            //bool tipinde result1 ve result2 tanımladık.
+            //bu result1 ve result2 girilen tarihin daha önce rezerve edilmiş tarihler arasında olup olmadığını kontrol ediyor.
+            //girilen tarihin başlangıç ve bitiş tarihlerini ayrı ayrı alıp daha önce rezerve edilen tarihlerin 
+            //başlangıcından büyük ve bitişinden küçük ise false;
+            //diğer durumlarda true değerini odaMüsaitMi? fonksionu içerisine gönderiyor.
+
             bool result1 = false;
             bool result2 = false;
             
@@ -56,6 +61,11 @@ namespace Otel_Rezervasyonu
             }
             else
             {
+                //Compare komutu ile iki tarihin zamanlarını karşılaştırdık
+                // = 0 tarihler aynı
+                // > 0 ilk tarih daha büyük
+                // < 0 ilk tarih daha küçük
+
                 foreach (DateTime a in baslangicDizi)
                 {
                     int temp = DateTime.Compare(a, baslangic);

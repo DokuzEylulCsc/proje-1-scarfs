@@ -9,6 +9,8 @@ namespace Otel_Rezervasyonu
     class Otel
     {
         internal string[] otelTip = { "denizTek", "denizCift", "denizIkiz", "havuzTek", "havuzCift", "havuzIkiz" };
+        
+        //Odaları yarattık.
 
         Oda oda1 = new Oda("denizTek");
         Oda oda2 = new Oda("denizCift");
@@ -22,6 +24,8 @@ namespace Otel_Rezervasyonu
 
         public bool odaMusaitMi(DateTime baslangic, DateTime bitis, string odaTip)
         {
+            //Girilen tarihte odanın doluluğunu kontrol ettirdik.
+
             bool result = false;
 
             Console.WriteLine("qwdqwd" + odaTip);
@@ -45,6 +49,7 @@ namespace Otel_Rezervasyonu
 
         public string rezervasyonYap(DateTime baslangic, DateTime bitis, string odaTip)
         {
+            //Girilen tarihleri rezerveEt fonksiyonunu çağırarak arraylist'imize ekliyoruz.
 
             string result = "boş";
             if (odaTip == "denizTek")
@@ -85,6 +90,8 @@ namespace Otel_Rezervasyonu
 
         public void rezervasyonIptal(int index, string odaTip)
         {
+            //Fonksiyona gönderilen index ve oda tipini seçili listboxdan 
+            //rezerveIptal fonksiyonunu çağırarak arraylistimizden çıkartıyoruz..
             if (odaTip == "denizTek")
             {
                 oda1.rezerveIptal(index);
@@ -119,6 +126,9 @@ namespace Otel_Rezervasyonu
 
         public int odaDoluluk(string odaTip)
         {
+            // Seçili odanın doluluğunu label üzerinden yazdırmayı denedik.
+            // 
+
             Console.WriteLine(oda1.Doluluk);
             if (odaTip == "denizTek")
                 return oda1.Doluluk;

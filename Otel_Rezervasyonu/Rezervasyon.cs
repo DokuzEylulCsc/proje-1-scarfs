@@ -13,6 +13,15 @@ namespace Otel_Rezervasyonu
 
         public int odaDurumSorgula(DateTime baslangic, DateTime bitis, string odaTip)
         {
+
+            
+            
+            //istisnai durumları ayarlamak için rezervasyonyap butonuna değerler gönderdik.
+            //oda müsaitse 1
+            //girilen tarih doluysa 3
+            //oda tipi seçilmediyse 4
+            //diğer durumlarda 0 gönderiyor..
+
             if(DateTime.Compare(baslangic,bitis) > 0 || DateTime.Compare(baslangic, bitis) == 0)
             {
                 return 3;

@@ -28,7 +28,10 @@ namespace Otel_Rezervasyonu
         {
             if (denizTek.Checked == true)
             {
+                //Seçili radiobuttona göre gösterilecek listboxları ayarladık.
+
                 radiobutton = "denizTek";
+
                 listBox1.Visible = true;
                 listBox2.Visible = false;
                 listBox3.Visible = false;
@@ -45,6 +48,8 @@ namespace Otel_Rezervasyonu
         {
             if (denizCift.Checked == true)
             {
+                //Seçili radiobuttona göre gösterilecek listboxları ayarladık.
+
                 radiobutton = "denizCift";
 
                 listBox1.Visible = false;
@@ -60,7 +65,10 @@ namespace Otel_Rezervasyonu
         {
             if (denizIkiz.Checked == true)
             {
+                //Seçili radiobuttona göre gösterilecek listboxları ayarladık.
+
                 radiobutton = "denizIkiz";
+
                 listBox1.Visible = false;
                 listBox2.Visible = false;
                 listBox3.Visible = true;
@@ -76,7 +84,10 @@ namespace Otel_Rezervasyonu
         {
             if (havuzTek.Checked == true)
             {
+                //Seçili radiobuttona göre gösterilecek listboxları ayarladık.
+
                 radiobutton = "havuzTek";
+
                 listBox1.Visible = false;
                 listBox2.Visible = false;
                 listBox3.Visible = false;
@@ -90,7 +101,9 @@ namespace Otel_Rezervasyonu
         {
             if (havuzCift.Checked == true)
             {
+                //Seçili radiobuttona göre gösterilecek listboxları ayarladık.
                 radiobutton = "havuzCift";
+
                 listBox1.Visible = false;
                 listBox2.Visible = false;
                 listBox3.Visible = false;
@@ -103,7 +116,9 @@ namespace Otel_Rezervasyonu
         {
             if (havuzIkiz.Checked == true)
             {
+                //Seçili radiobuttona göre gösterilecek listboxları ayarladık.
                 radiobutton = "havuzIkiz";
+
                 listBox1.Visible = false;
                 listBox2.Visible = false;
                 listBox3.Visible = false;
@@ -126,6 +141,10 @@ namespace Otel_Rezervasyonu
             DateTime bitis = new DateTime(Int32.Parse(yilBitis.Text), Int32.Parse(ayBitis.Text), Int32.Parse(gunBitis.Text));
             int result = rezervasyon.odaDurumSorgula(baslangic, bitis, radiobutton);
 
+            //Rezervasyon yap buttonuna bastığımızda 
+            //Oda durum sorgula fonksiyonunu kullanarak bi result değeri aldık ve:
+            //Oluşabilecek durumları ve hataları ayarladık.
+
             if (result == 1)
             {
                 string date;
@@ -147,6 +166,8 @@ namespace Otel_Rezervasyonu
         public void listBoxEkle(string data)
         {
             //Console.WriteLine("listbozekle çalıştı ve değer = " + data);
+
+            //Seçtiğimiz odanın listbox'una yazdığımız tarihi eklemesini sağladık.
 
             if (listBox1.Visible == true)
                 listBox1.Items.Add(data);
@@ -175,6 +196,8 @@ namespace Otel_Rezervasyonu
         private void rezervasyonIptal_Click(object sender, EventArgs e)
         {
             //Console.WriteLine(listBox1.SelectedIndex);
+            //Buttona bastığımızda Visibility = true olan listboxların selectedindex'lerindeki değerleri 
+            //rezervasyonIptal fonksiyonuna gönderiyoruz.
 
             if (listBox1.Visible == true)
                 rezervasyon.rezervasyonIptalIlet(listBox1.SelectedIndex, radiobutton);
@@ -204,6 +227,7 @@ namespace Otel_Rezervasyonu
         {
             //Console.WriteLine("sil çalıştı");
 
+            //rezerve edilmiş değerin selectedindexlerini alarak seçili listboxdan sildik.
 
 
             if (listBox1.Visible == true)
